@@ -4,3 +4,40 @@ The objective of this project is to analyze pizza sales data to evaluate overall
 ## Dataset Used
 - <a href="https://github.com/AlyNabil772/Pizza-sales-data-analysis/blob/main/Pizza%20Sales%20SQL%20%2B%20Excel.xlsx">Dataset</a>
 
+## Questions (KPIs)
+- What is the total revenue generated?
+- What is the average order value?
+- How many total orders were placed?
+- What is the average number of pizzas per order?
+- How many pizzas were sold in total?
+- Which pizza category generates the highest revenue?
+- Which pizza size contributes the most to sales?
+- How do sales and orders vary by day of the week?
+- How do sales change across different months?
+
+- Dashboard Interaction <a href="https://github.com/AlyNabil772/Pizza-sales-data-analysis/blob/main/Screenshot.PNG">View Dashboard</a>
+
+## Process
+- Verified data accuracy and checked for missing or inconsistent values.
+- Ensured proper data types and formatting for analysis.
+- Created SQL Views to calculate core KPIs.
+- Aggregated sales and order metrics for analysis.
+- Designed an interactive dashboard to visualize trends and performance indicators.
+
+  ## Dashboard
+  The dashboard provides a comprehensive overview of pizza sales performance, including:
+- Total Revenue.
+- Average Order Value.
+- Total Orders.
+- Average Pizzas per Order.
+- Total Pizzas Sold.
+- Sales distribution by category and size.
+- Order and sales trends by day and month.
+
+  <img width="616" height="355" alt="Screenshot" src="https://github.com/user-attachments/assets/5b058521-e9f5-4cfc-a061-57c53e3aa467" />
+
+
+ 
+
+
+

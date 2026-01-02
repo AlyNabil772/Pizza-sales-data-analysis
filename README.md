@@ -25,7 +25,7 @@ The objective of this project is to analyze pizza sales data to evaluate overall
 - Designed an interactive dashboard to visualize trends and performance indicators.
 
   ## Dashboard
-  The dashboard provides a comprehensive overview of pizza sales performance, including:
+ The dashboard provides a comprehensive overview of pizza sales performance, including:
 - Total Revenue.
 - Average Order Value.
 - Total Orders.
@@ -35,6 +35,28 @@ The objective of this project is to analyze pizza sales data to evaluate overall
 - Order and sales trends by day and month.
 
   <img width="616" height="355" alt="Screenshot" src="https://github.com/user-attachments/assets/5b058521-e9f5-4cfc-a061-57c53e3aa467" />
+
+  ## Project Insights
+- Total Revenue: $817,860 generated from pizza sales.
+- Total Orders: 21,350 orders placed during the analyzed period.
+- Average Order Value: $38 per order.
+- Average Pizzas per Order: 2.32 pizzas.
+- Total Pizzas Sold: 49,574 pizzas.
+- Top Performing Category: Classic pizzas generate the highest revenue (~$220K), followed by Supreme and Chicken categories.
+- Sales by Pizza Size: Large (L) and Medium (M) sizes dominate total revenue, while XL and XXL sizes contribute minimally.
+- Daily Trends: Sales and orders peak on Friday and Thursday, indicating strong end-of-week demand.
+- Monthly Trends: Higher sales volumes appear in the mid-year months, with a gradual decline toward the end of the year.
+
+## Final Conclusion
+- The analysis shows that the business performance is strongly driven by Classic pizza offerings and Medium to Large sizes.
+- Focusing promotions on high-demand days such as Fridays and optimizing inventory for top-performing categories and sizes can significantly improve profitability.
+- These insights help support strategic planning, marketing optimization, and operational efficiency.
+
+## Tools Used
+- SQL Server
+- SQL Views
+- Data Analysis & Aggregation
+- Dashboard Visualization
 
 
  

@@ -1,0 +1,109 @@
+-- =========================================
+-- View: avg_orger_value
+-- Purpose: Calculate the Average Order Value (AOV)
+-- Formula: Total Sales / Number of Unique Orders
+-- =========================================
+CREATE VIEW [dbo].[avg_orger_value] AS
+SELECT 
+    SUM(total_price) / COUNT(DISTINCT order_id) AS order_value
+FROM pizza_sales_table;
+
+
+-- =========================================
+-- View: avg_pizza_per_order
+-- Purpose: Calculate the average number of pizzas per order
+-- Formula: Total Quantity Sold / Number of Unique Orders
+-- =========================================
+CREATE VIEW [dbo].[avg_pizza_per_order] AS 
+SELECT 
+    CAST(
+        CAST(SUM(quantity) AS DECIMAL(10, 2)) / 
+        CAST(COUNT(DISTINCT order_id) AS DECIMAL(10, 2)) 
+    AS DECIMAL(10, 2)) AS avd_pizza_per_order
+FROM pizza_sales_table;
+
+
+-- =========================================
+-- View: revenue
+-- Purpose: Calculate total revenue from all pizza sales
+-- =========================================
+CREATE VIEW [dbo].[revenue] AS
+SELECT 
+    SUM(total_price) AS total_revenue
+FROM pizza_sales_table;
+
+
+-- =========================================
+-- View: sales_per_per_pizza_category
+-- Purpose: Calculate total revenue and revenue percentage by pizza category
+-- =========================================
+CREATE VIEW [dbo].[sales_per_per_pizza_category] AS
+SELECT 
+    pizza_category,
+    CAST(SUM(total_price) AS DECIMAL(10, 2)) AS total_revenue,
+    CAST(
+        SUM(total_price) * 100 / 
+        (SELECT SUM(total_price) FROM pizza_sales_table)
+    AS DECIMAL(10, 2)) AS Pct
+FROM pizza_sales_table
+GROUP BY pizza_category;
+
+
+-- =========================================
+-- View: sales_per_pizza_size
+-- Purpose: Calculate total revenue and revenue percentage by pizza size
+-- =========================================
+CREATE VIEW [dbo].[sales_per_pizza_size] AS
+SELECT 
+    pizza_size,
+    CAST(SUM(total_price) AS DECIMAL(10, 2)) AS total_revenue,
+    CAST(
+        SUM(total_price) * 100 / 
+        (SELECT SUM(total_price) FROM pizza_sales_table)
+    AS DECIMAL(10, 2)) AS Pct
+FROM pizza_sales_table
+GROUP BY pizza_size;
+
+
+-- =========================================
+-- View: total_orders
+-- Purpose: Count total number of unique orders
+-- =========================================
+CREATE VIEW [dbo].[total_orders] AS
+SELECT 
+    COUNT(DISTINCT order_id) AS total_orders
+FROM pizza_sales_table;
+
+
+-- =========================================
+-- View: total_orders_per_day
+-- Purpose: Count total orders by day of the week
+-- =========================================
+CREATE VIEW [dbo].[total_orders_per_day] AS
+SELECT 
+    DATENAME(DW, order_date) AS day_name,
+    COUNT(DISTINCT order_id) AS total_orders
+FROM pizza_sales_table
+GROUP BY DATENAME(DW, order_date);
+
+
+-- =========================================
+-- View: total_orders_per_month
+-- Purpose: Count total orders by month
+-- =========================================
+CREATE VIEW [dbo].[total_orders_per_month] AS
+SELECT 
+    DATENAME(MONTH, order_date) AS month_name,
+    COUNT(DISTINCT order_id) AS total_orders
+FROM pizza_sales_table
+GROUP BY DATENAME(MONTH, order_date);
+
+
+-- =========================================
+-- View: total_pizza_sold
+-- Purpose: Calculate total number of pizzas sold
+-- =========================================
+CREATE VIEW [dbo].[total_pizza_sold] AS 
+SELECT 
+    SUM(quantity) AS pizza_sold
+FROM pizza_sales_table;
